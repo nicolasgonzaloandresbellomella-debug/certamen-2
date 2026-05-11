@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Desempeño Laboral</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <header class="cabecera">
+            <h1>Evaluación de Desempeño Laboral</h1>
+            <p>Ingresa los datos del colaborador y los puntajes por criterio</p>
+        </header>
+
+        <form id="formularioEvaluacion">
+            <div class="grupo-form">
+                <label for="nombre">Nombre del colaborador</label>
+                <input type="text" id="nombre" placeholder="Ej: María González" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios">
+            </div>
+
+            <div class="grupo-form">
+                <label for="cargo">Cargo</label>
+                <input type="text" id="cargo" placeholder="Ej: Analista de Proyectos" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios">
+            </div>
+
+            <div class="grilla-criterios">
+                <div class="encabezado-grilla">CRITERIO</div>
+                <div class="encabezado-grilla">PUNTAJE (1-10)</div>
+                <div class="encabezado-grilla">PESO (%)</div>
+
+                <input type="text" value="Puntualidad" readonly tabIndex="-1">
+                <input type="number" id="puntaje1" step="0.1" placeholder="1-10">
+                <input type="number" id="peso1" class="input-peso" placeholder="%">
+
+                <input type="text" value="Trabajo en equipo" readonly tabIndex="-1">
+                <input type="number" id="puntaje2" step="0.1" placeholder="1-10">
+                <input type="number" id="peso2" class="input-peso" placeholder="%">
+
+                <input type="text" value="Calidad del trabajo" readonly tabIndex="-1">
+                <input type="number" id="puntaje3" step="0.1" placeholder="1-10">
+                <input type="number" id="peso3" class="input-peso" placeholder="%">
+
+                <input type="text" value="Productividad" readonly tabIndex="-1">
+                <input type="number" id="puntaje4" step="0.1" placeholder="1-10">
+                <input type="number" id="peso4" class="input-peso" placeholder="%">
+
+                <input type="text" value="Iniciativa" readonly tabIndex="-1">
+                <input type="number" id="puntaje5" step="0.1" placeholder="1-10">
+                <input type="number" id="peso5" class="input-peso" placeholder="%">
+            </div>
+
+            <div class="resumen-pesos">
+                <span>Suma actual de pesos:</span>
+                <span id="textoSumaPesos">0%</span>
+            </div>
+
+            <div id="cajaErrores" class="oculto caja-errores"></div>
+            <div id="cajaResultado" class="oculto caja-resultado"></div>
+
+            <button type="submit" class="btn-calcular">Calcular evaluación</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
